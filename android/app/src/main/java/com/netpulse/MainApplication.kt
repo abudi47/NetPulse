@@ -1,6 +1,7 @@
 package com.netpulse
 
 import android.app.Application
+import androidx.appcompat.app.AppCompatDelegate
 import com.facebook.react.PackageList
 import com.facebook.react.ReactApplication
 import com.facebook.react.ReactHost
@@ -22,6 +23,11 @@ class MainApplication : Application(), ReactApplication {
 
   override fun onCreate() {
     super.onCreate()
+    // NetPulse is dark by default (DEFAULT_THEME_PREFERENCE in src/theme/theme.ts).
+    // This has to be set here, before the first screen exists: React Native picks the
+    // system-bar styling and Android picks the window background from the night-mode
+    // setting at that moment, which is earlier than any JavaScript runs.
+    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
     loadReactNative(this)
   }
 }

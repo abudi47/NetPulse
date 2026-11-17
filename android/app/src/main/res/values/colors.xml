@@ -1,0 +1,8 @@
+<resources>
+    <!--
+      Window background shown before React Native draws its first frame.
+      Keep in sync with lightPalette.background in src/theme/palettes.ts.
+      The dark value lives in values-night/colors.xml.
+    -->
+    <color name="app_background">#F3F5F8</color>
+</resources>
