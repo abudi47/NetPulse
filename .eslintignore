@@ -1,0 +1,4 @@
+# Build output. Gradle writes generated JavaScript (e.g. test reports) here.
+android/**/build/
+ios/build/
+coverage/
